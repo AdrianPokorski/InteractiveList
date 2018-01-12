@@ -20,12 +20,29 @@ window.onload = function(){
         
         preloader.classList.add("hidden"); 
     
-    }, 2500);
-        
-    
+    }, 2500);   
 }
 
+$(document).ready (function getData(){
+   
+    $.get( "http://jadesign.pl/dev/api/?get", function( getData ) {
+     data = JSON.parse(getData);
+     console.log(data)
+     displayItemFromData();
+   }); 
+    
+});
 
+function saveData(){
+    $.ajax({
+      url: 'http://jadesign.pl/dev/api/',
+      method: 'POST',
+      data: {'hash':'adriano', 'data': data},
+      success: function(){
+        console.log(data);
+      }
+    });
+}
 
 function cleanItemFromDisplay() {
   dataBox.innerHTML = "";
@@ -47,6 +64,8 @@ function displayItemFromData() {
   [].forEach.call(buttonDelete,function(value){
     value.addEventListener("click",function(e){
       removeItemFromData(e);
+      saveData();
+      displayItemFromData()
     })
   });
   
@@ -55,7 +74,6 @@ function displayItemFromData() {
   [].forEach.call(buttonModify, function(value){
       value.addEventListener("click",function(e){
         modifyData(e, buttonModify);
-        
     })
   })
   
@@ -67,6 +85,7 @@ function addItemToData() {
     price: inputPrice.value,
   };
   data.push(obj);
+  saveData();
   displayItemFromData();
 }
 
@@ -116,6 +135,11 @@ function modifyData(e, buttonModify){
     thisPrice.removeAttribute("style", "background:#f2f2f2;");
     thisModify.setAttribute("value", "Modyfikuj");
   }
+    data[e.target.classList[1]]['product'] = thisProduct.value;
+    data[e.target.classList[1]]['price'] = thisPrice.value;
+    saveData();
+    console.log(data)
+    
 }
 
 function validate(evt) {
