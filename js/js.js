@@ -52,10 +52,10 @@ function displayItemFromData() {
   cleanItemFromDisplay();
   for (i = 0; i < data.length; i++) {
     dataBox.innerHTML += 
-    `<p>Nazwa produktu:<input class="prod-name ${i}" disabled value=" ${data[i].product} "></p>  
+    `<li class="ui-state-default"><p>Nazwa produktu:<input class="prod-name ${i}" disabled value=" ${data[i].product} "></p>  
     <p>Cena: <input class="pric-name ${i}" disabled value=" ${data[i].price} zł "></p>       
     <button class="deletebtn ${i}">Usuń</button>
-    <input type="submit" value="Modyfikuj" class="modifybtn ${i}"><br><br> `
+    <input type="submit" value="Modyfikuj" class="modifybtn ${i}"></li> `
   }
   
   var buttonDelete = document.querySelectorAll('.deletebtn');
@@ -156,3 +156,4 @@ function validate(evt) {
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
 }
+
