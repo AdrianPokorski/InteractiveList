@@ -1,0 +1,89 @@
+/* GLOBALNE STYLE  */
+* {
+  margin: 0;
+  padding: 0; }
+
+/* KONIEC GLOBALNE STYLE  */
+#preloader-box {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden; }
+  #preloader-box .preloader-wrapper {
+    position: absolute; }
+  #preloader-box .preloader-wrapper.big {
+    width: 100px;
+    height: 100px; }
+  #preloader-box .leftBackground {
+    width: 50%;
+    height: 100vh;
+    background: #000;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all; }
+  #preloader-box .activeLeft {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all; }
+  #preloader-box .rightBackground {
+    width: 50%;
+    height: 100vh;
+    background: #000;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all; }
+  #preloader-box .activeRight {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: 1s all;
+    -o-transition: 1s all;
+    transition: 1s all; }
+
+.hidden {
+  display: none !important; }
+
+.wrapper {
+  width: 1200px;
+  display: block;
+  margin: 0 auto;
+  text-align: center; }
+  .wrapper .prod-name, .wrapper .pric-name {
+    background: #fff;
+    border: 0px;
+    outline: 0;
+    margin-top: 0px;
+    width: 350px;
+    height: 25px;
+    font-size: 16px;
+    color: #000; }
+  .wrapper .error {
+    color: red;
+    font-size: 50px;
+    display: none; }
+  .wrapper .visible {
+    display: block !important; }

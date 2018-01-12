@@ -1,0 +1,49 @@
+<html>
+ <head>
+ <title>InteractiveList</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+<link href="css/materialize.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+ </head>
+ <body>
+
+<div id="preloader-box">
+   <div class="leftBackground"></div>
+   <div class="rightBackground"></div>
+   <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+    </div>
+</div>
+     
+<div class="wrapper">
+      
+      <h3>Lista Zadań</h3>
+      <input id="data1" type="text" placeholder="Produkt" >
+      <input id="data2" type="text" onkeypress='validate(event)' placeholder="Cena">
+      <button class="btn-floating btn-large waves-effect waves-light red add-data"><i class="material-icons">add</i></button>
+      <div class="data-box"></div>
+  
+      <div class="error" >CHUJ CI NA PIZDE, normalnie</div>
+</div>
+
+    
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+ <script src="https://code.jquery.com/jquery.js"></script>
+ <script src="js/materialize.min.js"></script>
+ <script src="js/js.js"></script>
+ <!-- Include all compiled plugins (below), or include individual
+files as needed -->
+<script>
+</script>
+ </body>
+</html>
