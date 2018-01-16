@@ -26,11 +26,12 @@ window.onload = function(){
 $(document).ready (function getData(){
    
     $.get( "http://jadesign.pl/dev/api/?get", function( getData ) {
-     data = JSON.parse(getData);
-     console.log(data)
-     displayItemFromData();
+        if (getData !== 'null' ){
+        data = JSON.parse(getData);
+        }
+        displayItemFromData();
+        
    }); 
-    
 });
 
 function saveData(){
@@ -39,7 +40,7 @@ function saveData(){
       method: 'POST',
       data: {'hash':'adriano', 'data': data},
       success: function(){
-        console.log(data);
+          console.log(data);
       }
     });
 }
@@ -84,9 +85,9 @@ function addItemToData() {
     product: inputProduct.value,
     price: inputPrice.value,
   };
-  data.push(obj);
-  saveData();
-  displayItemFromData();
+    data.push(obj);
+    saveData();
+    displayItemFromData();
 }
 
 addDataButton.addEventListener("click", function() {
