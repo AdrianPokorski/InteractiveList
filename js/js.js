@@ -94,7 +94,7 @@ addDataButton.addEventListener("click", function() {
   if(inputProduct.value == "" || inputPrice.value == "" )
   {
    if(addDataButton.preventDefault) addDataButton.preventDefault();
-    alert('Nie możesz dodać produktu, którego nie ma CWELU!!!!')
+    alert('Podaj produkt oraz cenę, aby dodać')
   }
   else 
   {
