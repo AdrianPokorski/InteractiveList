@@ -68,9 +68,7 @@
   display: none !important; }
 
 .wrapper {
-  width: 1200px;
   display: block;
-  margin: 0 auto;
   text-align: center; }
   .wrapper .prod-name, .wrapper .pric-name {
     background: #fff;

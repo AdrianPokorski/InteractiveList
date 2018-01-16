@@ -55,8 +55,8 @@ function displayItemFromData() {
     dataBox.innerHTML += 
     `<li class="ui-state-default"><p>Nazwa produktu:<input class="prod-name ${i}" disabled value=" ${data[i].product} "></p>  
     <p>Cena: <input class="pric-name ${i}" disabled value=" ${data[i].price} zł "></p>       
-    <button class="deletebtn ${i}">Usuń</button>
-    <input type="submit" value="Modyfikuj" class="modifybtn ${i}"></li> `
+    <button class="deletebtn ${i} btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></button>
+   <input type="submit" value="Edit" class="modifybtn ${i} btn-floating btn-large waves-effect waves-light red"></li> `
   }
   
   var buttonDelete = document.querySelectorAll('.deletebtn');
@@ -126,7 +126,7 @@ function modifyData(e, buttonModify){
     thisPrice.removeAttribute("disabled");
     thisProduct.setAttribute("style", "background:#f2f2f2;");
     thisPrice.setAttribute("style", "background:#f2f2f2;");
-    thisModify.setAttribute("value", "Zaakceptuj");
+    thisModify.setAttribute("value", "Done");
   }
   else
   {
@@ -134,7 +134,7 @@ function modifyData(e, buttonModify){
     thisPrice.setAttribute("disabled", "true");
     thisProduct.removeAttribute("style", "background:#f2f2f2;");
     thisPrice.removeAttribute("style", "background:#f2f2f2;");
-    thisModify.setAttribute("value", "Modyfikuj");
+    thisModify.setAttribute("value", "Edit");
   }
     data[e.target.classList[1]]['product'] = thisProduct.value;
     data[e.target.classList[1]]['price'] = thisPrice.value;
